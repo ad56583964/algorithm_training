@@ -1,21 +1,19 @@
-//1-11
+//1-12
 
 #include<cstdio>  //in cpp needed
 
 int main ()
 {
-    int a, b, n, m;
-    scanf("%d%d", &n, &m);
+    int a, b, c;
 
-    //联立方程得到
-    a = (4*n-m) /2;
-    b = n-a;
+    scanf("%d%d%d", &a, &b, &c);
 
-    //附加实际意义的约束
-    if(m % 2 == 1 || a < 0 || b < 0)  // ||运算符具有短路策略
-        printf("No answer\n");
-    else
-        printf("%d %d\n", a, b);
+    if(a < b && b < c)printf("%d %d %d\n", a, b, c);
+    if(a < c && c < b)printf("%d %d %d\n", a, c, b);
+    if(b < a && a < c)printf("%d %d %d\n", b, a, c);
+    if(b < c && c < a)printf("%d %d %d\n", b, c, a);
+    if(c < a && a < b)printf("%d %d %d\n", c, a, b);
+    if(c < b && b < a)printf("%d %d %d\n", c, b, a);
 
     return 0;
 }
